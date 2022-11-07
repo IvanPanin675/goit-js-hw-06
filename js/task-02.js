@@ -7,15 +7,14 @@ const ingredients = [
   'Condiments',
 ];
 
-const storageEll = ingredients
-  .map;
-
-
 const listEl = document.querySelector("#ingredients");
-ingredients.forEach((ingredient) => {
-  const itemEL = document.createElement("li");
-  itemEL.classList.add("item");
-  itemEL.textContent = ingredient;
-  return itemEL;
-});
-listEl.append(...storageEll);
+const storageEll = ingredients
+  .map(
+    (ingredient) =>
+      `<li class="item">${ingredient}</li>`
+  )
+  .join("");
+
+
+
+listEl.insertAdjacentHTML("afterbegin", storageEll);
